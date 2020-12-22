@@ -1,0 +1,14 @@
+---
+
+- hosts: all
+  become: true
+  tasks:
+
+  - name: update resposity index
+    apt:
+      update_cache: yes
+
+  - name: install osquery package
+    apt: 
+      name: osquery
+      state: latest    
