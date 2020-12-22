@@ -1,2 +1,2 @@
-ojubuntukontor
-ojCentos
+ojubuntukontor osquery_package=osquery
+ojCentos osquery_package=osquery

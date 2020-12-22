@@ -2,26 +2,10 @@
 
 - hosts: all
   become: true
-  tasks:
-  - name: update resposity index
-    apt:
-      update_cache: yes
-    when: ansible_distribution == "Ubuntu"
-
+  tasks:   
   - name: install osquery package
-    apt: 
-      name: osquery
+    package: 
+      name: 
+        - "{{ osquery_package }}"
       state: latest    
-    when: ansible_distribution == "Ubuntu" 
-
-  - name: update resposity index
-    dnf:
       update_cache: yes
-    when: ansible_distribution == "CentOS"
-
-  - name: install osquery package
-    dnf: 
-      name: osquery
-      state: latest    
-    when: ansible_distribution == "CentOS" 
-
